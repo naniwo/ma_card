@@ -1,0 +1,2 @@
+class CardPageLink < ApplicationRecord
+end
