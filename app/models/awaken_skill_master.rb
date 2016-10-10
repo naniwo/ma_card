@@ -1,0 +1,2 @@
+class AwakenSkillMaster < ApplicationRecord
+end

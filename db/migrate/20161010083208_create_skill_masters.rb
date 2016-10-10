@@ -6,6 +6,6 @@ class CreateSkillMasters < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_index :skill_masters, :card_id
+    add_index :skill_masters, :card_id, unique: true
   end
 end

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010064401) do
+ActiveRecord::Schema.define(version: 20161010083734) do
+
+  create_table "awaken_skill_masters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "card_id",    null: false
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_awaken_skill_masters_on_card_id", unique: true, using: :btree
+  end
 
   create_table "card_attribute_masters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "card_id",        null: false
@@ -100,6 +108,14 @@ ActiveRecord::Schema.define(version: 20161010064401) do
     t.index ["init_mat"], name: "index_card_status_masters_on_init_mat", using: :btree
     t.index ["regene"], name: "index_card_status_masters_on_regene", using: :btree
     t.index ["turn"], name: "index_card_status_masters_on_turn", using: :btree
+  end
+
+  create_table "skill_masters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "card_id",    null: false
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_skill_masters_on_card_id", unique: true, using: :btree
   end
 
 end
