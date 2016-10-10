@@ -35,3 +35,7 @@ CardListPageLink.all.each do |list_page_link|
     end
   end
 end
+
+# card
+# 画像
+page.image_with(src: /wikidb_img/)
