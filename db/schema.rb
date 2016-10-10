@@ -10,12 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009162043) do
+ActiveRecord::Schema.define(version: 20161010053045) do
 
   create_table "card_list_page_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "url",        limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "card_masters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",        null: false
+    t.string   "other_name",  null: false
+    t.string   "img_path"
+    t.integer  "rarity",      null: false
+    t.integer  "cost",        null: false
+    t.integer  "arthur_type", null: false
+    t.string   "illustrator"
+    t.string   "cv"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["arthur_type"], name: "index_card_masters_on_arthur_type", using: :btree
+    t.index ["cost"], name: "index_card_masters_on_cost", using: :btree
+    t.index ["name"], name: "index_card_masters_on_name", using: :btree
+    t.index ["other_name"], name: "index_card_masters_on_other_name", using: :btree
+    t.index ["rarity"], name: "index_card_masters_on_rarity", using: :btree
   end
 
   create_table "card_page_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
