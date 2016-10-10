@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161010060442) do
     t.integer  "rarity",      null: false
     t.integer  "cost",        null: false
     t.integer  "arthur_type", null: false
+    t.integer  "skill_type",  null: false
     t.string   "illustrator"
     t.string   "cv"
     t.datetime "created_at",  null: false
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161010060442) do
     t.index ["name"], name: "index_card_masters_on_name", using: :btree
     t.index ["other_name"], name: "index_card_masters_on_other_name", using: :btree
     t.index ["rarity"], name: "index_card_masters_on_rarity", using: :btree
+    t.index ["skill_type"], name: "index_card_masters_on_skill_type", using: :btree
   end
 
   create_table "card_page_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
