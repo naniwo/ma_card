@@ -10,6 +10,7 @@ class CreateCardMasters < ActiveRecord::Migration[5.0]
       t.integer :skill_type, null: false
       t.string :illustrator
       t.string :cv
+      t.text :profile
       t.timestamps
     end
 
