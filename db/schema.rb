@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010053045) do
+ActiveRecord::Schema.define(version: 20161010060442) do
+
+  create_table "card_attribute_masters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "card_id",        null: false
+    t.integer  "attribute_type", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["attribute_type"], name: "index_card_attribute_masters_on_attribute_type", using: :btree
+    t.index ["card_id"], name: "index_card_attribute_masters_on_card_id", using: :btree
+  end
 
   create_table "card_list_page_links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "url",        limit: 65535, null: false
